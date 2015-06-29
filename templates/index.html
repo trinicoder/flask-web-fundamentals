@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='concise.css') }}">
+    </head>
+    <body>
+      <main class="siteContent container">
+        <h1>Homepage</h1>
+        {% if username != None %}
+          <p>Hello {{ username }}</p>
+        {% endif %}
+        <ul>
+          {% for e in user %}
+              <li>{{e}}</li>
+          {% endfor %}
+        </ul>
+        <p>Please Login</p>
+        <p>Ready? Click <a href="{{url_for('login')}}">here</a> to login!</p>
+        <p>
+        Women who sacrifice valuable time with their families to find work
+        overseas deserve respect, but they don’t often get it.
+        Photography by Tom White (www.tomwhitephotography.com)
+        Through the glass of the Philippines’ Kalibo Airport departure lounge
+        I can see a domestic worker and her husband sitting silently on a bench,
+        going through the ritual of another painful goodbye.</p>
+      </main>
+    </body>
+</html>

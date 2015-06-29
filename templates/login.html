@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Welcome {user}!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='concise.css') }}">
+    </head>
+    <body>
+      <main class="siteContent container">
+        <h1>Welcome to the {user} login page</h1>
+        {% if username != None %}
+          <p>Hello {{ username }}</p>
+        {% endif %}
+
+        <div class="alert">
+
+          <p>Enter secret message</p>
+        </div>
+        <form method= "POST">
+          {{ form.hidden_tag()}}
+          <p>
+          {{form.username}}
+          {{form.password}}
+          {{form.submit}}
+        <p>Click <a href="{{ url_for('index') }}">here</a> to go to page.</p>
+      </main>
+    </body>
+</html>
